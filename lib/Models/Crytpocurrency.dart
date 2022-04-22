@@ -13,6 +13,7 @@ class Cryptocurrency {
   double? ath;
   double? atl;
   int? marketcaprank;
+  bool isFavorite = false ;
 
   Cryptocurrency(
       {required this.id,
@@ -36,15 +37,16 @@ class Cryptocurrency {
         symbol: map['symbol'],
         name: map["name"],
         image: map["image"],
-        currentprice: map["current_price"],
+        currentprice: double.parse(map["current_price"].toString()),
         marketcaprank: map["market_cap_rank"],
-        marketCap: map["market_cap"],
-        high24: map["high_24h"],
-        low24: map["low_24h"],
-        pricechange24: map["price_change_24h"],
-        circulatingsupply: map["circulating_supply"],
-        pricechange24percentage: map["price_change_percentage_24h"],
-        ath: map["ath"],
-        atl: map["atl"]);
+        marketCap: double.parse(map["market_cap"].toString()),
+        high24: double.parse(map["high_24h"].toString()),
+        low24: double.parse(map["low_24h"].toString()),
+        pricechange24: double.parse(map["price_change_24h"].toString()),
+        circulatingsupply: double.parse(map["circulating_supply"].toString()),
+        pricechange24percentage: double.parse(map["price_change_percentage_24h"].toString()),
+        ath: double.parse(map["ath"].toString()),
+        atl: double.parse(map["atl"].toString()),
+    );
   }
 }
