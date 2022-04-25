@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1042458049894-2cqv34ep8j9v0smem0j4716p82aeac5h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1042458049894-2cqv34ep8j9v0smem0j4716p82aeac5h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZVtQGt4WYXOIdf5zlKzubU0976TiOl4w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1042458049894</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pblproject.cryptotracker</string>
+	<key>PROJECT_ID</key>
+	<string>crypto-tracker-a2f9c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>crypto-tracker-a2f9c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1042458049894:ios:d9faebb09a45276d531ca7</string>
+</dict>
+</plist>

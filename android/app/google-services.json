@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1042458049894",
+    "project_id": "crypto-tracker-a2f9c",
+    "storage_bucket": "crypto-tracker-a2f9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042458049894:android:0f75f5450bb1aa69531ca7",
+        "android_client_info": {
+          "package_name": "com.pblproject.cryptotracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042458049894-1hgs257seuubhfnh0cddl37lgd5tu9o5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARI1FTmf2lRq8uLUvscwVU1OIXO-cn_VY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042458049894-1hgs257seuubhfnh0cddl37lgd5tu9o5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1042458049894-2cqv34ep8j9v0smem0j4716p82aeac5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pblproject.cryptotracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
