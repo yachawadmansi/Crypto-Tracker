@@ -1,4 +1,6 @@
+// import 'dart:html';
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Favourites.dart';
 import 'Markets.dart';
@@ -14,6 +16,19 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF0C1842),
+        title:  Text(
+          "Crypto-Tracker",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 40,
+            color: Colors.white,
+          ),
+        ),
+
+      ),
+      backgroundColor: Color.fromRGBO(7, 16, 51, 0.99),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
@@ -21,19 +36,11 @@ class _HomepageState extends State<Homepage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Crypto-Tracker",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                ),
-              ),
-              SizedBox(height: 10.0,),
-              Text(
                 "Today's Top Curriencies !!",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
               ),
               SizedBox(
-                height: 30,
+                height: 25,
               ),
               Markets(),
             ],
@@ -41,7 +48,7 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.blueAccent,
+        color: Colors.black,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -52,25 +59,26 @@ class _HomepageState extends State<Homepage> {
                   MaterialPageRoute(builder: (context) => Homepage()),
                 );
               },
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home , color: Colors.white,),
             ),
             IconButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Favourites()),);
               },
-              icon: Icon(Icons.wallet_membership),
+              icon: Icon(CupertinoIcons.heart_fill , color: Colors.white,) ,
             ),
             IconButton(
               onPressed: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => Setting_page()),);
               },
-              icon: Icon(Icons.settings),
+              icon: Icon(CupertinoIcons.news_solid, color: Colors.white,
+              ),
             ),
             IconButton(
               onPressed: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => News_page()),);
               },
-              icon: Icon(Icons.contact_page),
+              icon: Icon(CupertinoIcons.settings_solid, color: Colors.white,),
             ),
           ],
         ),
