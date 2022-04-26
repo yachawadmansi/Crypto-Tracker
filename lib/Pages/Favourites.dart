@@ -15,6 +15,11 @@ class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF0C1842),
+        title: Text("Favourites" , style: TextStyle(color: Colors.white),),
+      ),
+        backgroundColor: Color.fromRGBO(7, 16, 51, 0.99),
       body: SafeArea(
         child: Container(
           child: Consumer<Marketprovider>(
@@ -31,10 +36,9 @@ class _FavouritesState extends State<Favourites> {
               }
               else{
                 return Center(
-                  child: Text("No Favourites yet !!!", style: TextStyle(color: Colors.grey , fontSize: 20.0 ,  ), ),
+                  child: Text("No Favourites yet !!!", style: TextStyle(color: Colors.white , fontSize: 20.0 ,  ), ),
                 );
               }
-
             }
           ),
         ),

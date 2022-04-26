@@ -1,4 +1,3 @@
-// import 'dart:html';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,48 +42,51 @@ class _HomepageState extends State<Homepage> {
                 height: 25,
               ),
               Markets(),
+                 Container(
+                   width: double.infinity,
+                   child: BottomAppBar(
+                    elevation: 20.0,
+                    color: Colors.black,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Homepage()),
+                            );
+                          },
+                          icon: Icon(Icons.home , color: Colors.white,),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Favourites()),);
+                          },
+                          icon: Icon(CupertinoIcons.heart_fill , color: Colors.white,) ,
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => Setting_page()),);
+                          },
+                          icon: Icon(CupertinoIcons.news_solid, color: Colors.white,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => News_page()),);
+                          },
+                          icon: Icon(CupertinoIcons.settings_solid, color: Colors.white,),
+                        ),
+                      ],
+                    ),
+                ),
+                 ),
+              SizedBox(height: 15.0,)
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Homepage()),
-                );
-              },
-              icon: Icon(Icons.home , color: Colors.white,),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Favourites()),);
-              },
-              icon: Icon(CupertinoIcons.heart_fill , color: Colors.white,) ,
-            ),
-            IconButton(
-              onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Setting_page()),);
-              },
-              icon: Icon(CupertinoIcons.news_solid, color: Colors.white,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => News_page()),);
-              },
-              icon: Icon(CupertinoIcons.settings_solid, color: Colors.white,),
-            ),
-          ],
-        ),
-      ),
-    );
-
-
+      );
   }
 }

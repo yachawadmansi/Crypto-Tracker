@@ -1,4 +1,6 @@
+import 'package:cryptotracker/Constants/Themes.dart';
 import 'package:cryptotracker/Pages/Login%20page/Screens/Welcomepage/welcome_screen.dart';
+import 'package:cryptotracker/Providers/Theme_provider.dart';
 import 'package:cryptotracker/Providers/marketprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +17,21 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<Marketprovider>(
           create: (context) => Marketprovider(),
         ),
+        ChangeNotifierProvider<ThemeProvider>(
+          create: (context) => ThemeProvider(),
+        ),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: WelcomeScreen(),
+      child: Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            themeMode: themeProvider.themeMode,
+            theme: lightTheme,
+            darkTheme: darktheme,
+            home: WelcomeScreen(),
+          );
+        },
       ),
     );
   }
 }
-
