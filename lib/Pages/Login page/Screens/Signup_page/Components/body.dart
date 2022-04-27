@@ -9,8 +9,19 @@ import 'package:cryptotracker/Pages/Components/rounded_button.dart';
 import 'package:cryptotracker/Pages/Components/rounded_input_feild.dart';
 import 'package:cryptotracker/Pages/Components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  final _auth = FirebaseAuth.instance;
+  String email = '0ppppppp';
+  String password = 'ox0x0x0x';
+  bool showSpinner = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,22 +41,42 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               hintText: "Your Email",
-              onChanged: (value) {},
+              onChanged: (value) {
+                email = value;
+              },
             ),
             RoundedPasswordField(
-              onChanged: (value) {},
+              onChanged: (value) {
+                password = value;
+              },
             ),
             RoundedButton(
               text: "SIGNUP",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WelcomeScreen();
-                    },
-                  ),
-                );
+              press: () async {
+                setState(() {
+                  showSpinner = true;
+                });
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if (newUser != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WelcomeScreen();
+                        },
+                      ),
+                    );
+                    ;
+                  }
+
+                  setState(() {
+                    showSpinner = false;
+                  });
+                } catch (e) {
+                  print(e);
+                }
               },
             ),
             SizedBox(height: size.height * 0.03),
