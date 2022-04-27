@@ -1,4 +1,5 @@
 import 'package:cryptotracker/Constants/Themes.dart';
+import 'package:cryptotracker/Pages/Home_page.dart';
 import 'package:cryptotracker/Pages/Login%20page/Screens/Welcomepage/welcome_screen.dart';
 import 'package:cryptotracker/Providers/Theme_provider.dart';
 import 'package:cryptotracker/Providers/marketprovider.dart';
@@ -18,14 +19,14 @@ class MyApp extends StatelessWidget {
           create: (context) => Marketprovider(),
         ),
         ChangeNotifierProvider<ThemeProvider>(
-          create: (context) => ThemeProvider(),
+          create: (context) => ThemeProvider("light"),
         ),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            themeMode: themeProvider.themeMode,
+            themeMode : themeProvider.themeMode,
             theme: lightTheme,
             darkTheme: darktheme,
             home: WelcomeScreen(),
