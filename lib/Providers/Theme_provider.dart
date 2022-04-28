@@ -16,11 +16,11 @@ class ThemeProvider with ChangeNotifier{
   void toggleTheme() async{
     if(themeMode == ThemeMode.light){
       themeMode = ThemeMode.dark;
-      await LocalStorage.saveTheme("dark");
+      // await LocalStorage.saveTheme("dark");
     }
     else{
       themeMode = ThemeMode.light;
-      await LocalStorage.saveTheme("light");
+      // await LocalStorage.saveTheme("light");
     }
     notifyListeners();
   }

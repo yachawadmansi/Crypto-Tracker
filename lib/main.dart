@@ -6,19 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'Models/localStorage.dart';
+import 'Providers/Chart_provider.dart';
 
 void main() async{
-  String currentTheme = await LocalStorage.getTheme()??"light";
+  // String currentTheme = await LocalStorage.getTheme()??"light";
   runApp(MyApp(
-    theme: currentTheme,
+    // theme: currentTheme,
   ));
 
 }
 
 class MyApp extends StatelessWidget {
-   final String theme;
+   // final String theme;
   // required this.theme;
-   MyApp({required this.theme});
+   MyApp();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<Marketprovider>(
           create: (context) => Marketprovider(),
+        ),
+        ChangeNotifierProvider<GraphProvider>(
+          create: (context) => GraphProvider(),
         ),
         ChangeNotifierProvider<ThemeProvider>(
           create: (context) => ThemeProvider("light"),

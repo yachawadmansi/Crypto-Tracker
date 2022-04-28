@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:cryptotracker/Pages/Settings_Page.dart';
+import 'package:cryptotracker/Pages/New_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Favourites.dart';
@@ -79,7 +80,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                       IconButton(
                         onPressed: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => Setting_page()),);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => CryptoNewsList()),);
                         },
                         icon: Icon(
                           CupertinoIcons.news_solid,
