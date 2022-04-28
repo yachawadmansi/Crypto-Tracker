@@ -17,14 +17,12 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Color(0xFF0C1842),
-        title: Text(
+        //backgroundColor: Color(0xFF0C1842),
+        backgroundColor: Colors.blueGrey[900],
+        title: const Text(
           "Crypto-Tracker",
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 40,
-            // color: Colors.white,
-          ),
+              fontWeight: FontWeight.bold, fontSize: 25.0, color: Colors.white),
         ),
       ),
       // backgroundColor: Color.fromRGBO(7, 16, 51, 0.99),
@@ -37,10 +35,10 @@ class _HomepageState extends State<Homepage> {
               Text(
                 "Today's Top Curriencies !!",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    // color: Colors.white
-                  ),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  // color: Colors.white
+                ),
               ),
               SizedBox(
                 height: 25,
@@ -90,7 +88,10 @@ class _HomepageState extends State<Homepage> {
                       ),
                       IconButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()),);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Settings()),
+                          );
                         },
                         icon: Icon(
                           CupertinoIcons.settings_solid,

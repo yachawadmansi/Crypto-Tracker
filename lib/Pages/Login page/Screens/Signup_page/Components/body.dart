@@ -30,10 +30,10 @@ class _BodyState extends State<Body> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "SIGNUP",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            // Text(
+            //   "SIGNUP",
+            //   style: TextStyle(fontWeight: FontWeight.bold),
+            // ),
             SizedBox(height: size.height * 0.03),
             SvgPicture.asset(
               "assets/icons/loginmain.svg",
@@ -56,27 +56,27 @@ class _BodyState extends State<Body> {
                 setState(() {
                   showSpinner = true;
                 });
-              //   try {
-              //     // final newUser = await _auth.createUserWithEmailAndPassword(
-              //     //     email: email, password: password);
-              //     if (newUser != null) {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //           builder: (context) {
-              //             return WelcomeScreen();
-              //           },
-              //         ),
-              //       );
-              //       ;
-              //     }
-              //
-              //     setState(() {
-              //       showSpinner = false;
-              //     });
-              //   } catch (e) {
-              //     print(e);
-              //   }
+                //   try {
+                //     // final newUser = await _auth.createUserWithEmailAndPassword(
+                //     //     email: email, password: password);
+                //     if (newUser != null) {
+                //       Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) {
+                //             return WelcomeScreen();
+                //           },
+                //         ),
+                //       );
+                //       ;
+                //     }
+                //
+                //     setState(() {
+                //       showSpinner = false;
+                //     });
+                //   } catch (e) {
+                //     print(e);
+                //   }
               },
             ),
             SizedBox(height: size.height * 0.03),
