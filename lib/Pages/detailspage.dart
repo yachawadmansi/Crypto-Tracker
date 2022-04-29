@@ -100,7 +100,6 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   void dispose() {
     super.dispose();
-
   }
 
   @override
@@ -110,10 +109,7 @@ class _DetailsPageState extends State<DetailsPage> {
         return true;
       },
       child: Scaffold(
-
-        appBar: AppBar(
-
-        ),
+        appBar: AppBar(),
         body: SafeArea(
           child: Container(
             padding: EdgeInsets.only(
@@ -121,10 +117,30 @@ class _DetailsPageState extends State<DetailsPage> {
               right: 20,
             ),
             child: ListView(
-
               children: [
                 SizedBox(
                   height: 20,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 300,
+                  child: SfCartesianChart(
+                    primaryXAxis: DateTimeAxis(),
+                    series: <AreaSeries>[
+                      AreaSeries<GraphPoint, dynamic>(
+                          color: Color(0xff1ab7c3).withOpacity(0.5),
+                          borderColor: Color(0xff1ab7c3),
+                          borderWidth: 2,
+                          dataSource: graphProvider.graphPoints,
+                          xValueMapper: (GraphPoint graphPoint, index) =>
+                              graphPoint.date,
+                          yValueMapper: (GraphPoint graphpoint, index) =>
+                              graphpoint.price),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
                 ),
                 Center(
                   child: ToggleButtons(
@@ -142,50 +158,25 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 300,
-                  child: SfCartesianChart(
-                    primaryXAxis: DateTimeAxis(),
-                    series: <AreaSeries>[
-                      AreaSeries<GraphPoint, dynamic>(
-                          color: Color(0xff1ab7c3).withOpacity(0.5),
-                          borderColor: Color(0xff1ab7c3),
-                          borderWidth: 2,
-                          dataSource: graphProvider.graphPoints,
-                          xValueMapper: (GraphPoint graphPoint, index) =>
-                          graphPoint.date,
-                          yValueMapper: (GraphPoint graphpoint, index) =>
-                          graphpoint.price),
-                    ],
-                  ),
+                  height: 20,
                 ),
                 Consumer<Marketprovider>(
                   builder: (context, marketProvider, child) {
                     Cryptocurrency currentCrypto =
-                    marketProvider.fetchCryptoById(widget.id);
+                        marketProvider.fetchCryptoById(widget.id);
 
                     return ListView(
-
-
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       children: [
                         ListTile(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0)),
                           contentPadding: EdgeInsets.all(10),
                           tileColor: Color.fromARGB(19, 92, 92, 92),
-
-
-                          leading: (
-                              ClipOval(
-                                child: Image.network(currentCrypto.image!),
-
-
-                              )
-                          ),
+                          leading: (ClipOval(
+                            child: Image.network(currentCrypto.image!),
+                          )),
                           title: Text(
                             currentCrypto.name! +
                                 " (${currentCrypto.symbol!.toUpperCase()})",
@@ -206,20 +197,21 @@ class _DetailsPageState extends State<DetailsPage> {
                           height: 20,
                         ),
                         Column(
-
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Price Change (24h)",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20 ,),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
                             ),
                             Builder(
                               builder: (context) {
                                 double priceChange =
-                                currentCrypto.pricechange24!;
+                                    currentCrypto.pricechange24!;
                                 double priceChangePercentage =
-                                currentCrypto.pricechange24percentage!;
+                                    currentCrypto.pricechange24percentage!;
 
                                 if (priceChange < 0) {
                                   // negative

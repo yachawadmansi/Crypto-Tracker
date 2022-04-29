@@ -1,7 +1,12 @@
+import 'dart:ui';
 import 'package:cryptotracker/Providers/Theme_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'Favourites.dart';
+import 'Home_page.dart';
+import 'New_page.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);

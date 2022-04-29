@@ -30,8 +30,9 @@ class CryptoListTile extends StatelessWidget {
               ),
             );
           },
-          contentPadding: EdgeInsets.all(5.0),
-          tileColor: Color.fromRGBO(19, 92, 92, 92),
+          contentPadding: EdgeInsets.all(3.0),
+          tileColor: Colors.blueGrey[300],
+
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
 
@@ -69,7 +70,7 @@ class CryptoListTile extends StatelessWidget {
                       child: Icon(
                         CupertinoIcons.heart_fill,
                         size: 20.0,
-                        color: Colors.red,
+                        color: Colors.black,
                       ),
                     )
             ],
