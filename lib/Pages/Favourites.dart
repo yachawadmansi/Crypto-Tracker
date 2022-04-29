@@ -29,7 +29,8 @@ class _FavouritesState extends State<Favourites> {
         ),
       ),
       //backgroundColor: Color.fromRGBO(7, 16, 51, 0.99),
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey[200],
       body: SafeArea(
         child: Container(
           child: Consumer<Marketprovider>(
@@ -50,7 +51,7 @@ class _FavouritesState extends State<Favourites> {
                 child: Text(
                   "No Favourites yet !!!",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 25.0,
                   ),
                 ),

@@ -19,7 +19,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: Color(0xFF0C1842),
-        backgroundColor: Colors.blueGrey[900],
+        backgroundColor: Colors.blueGrey[800],
         title: const Text(
           "Crypto-Tracker",
           style: TextStyle(
@@ -27,6 +27,7 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
       // backgroundColor: Color.fromRGBO(7, 16, 51, 0.99),
+      backgroundColor: Colors.blueGrey[200],
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
@@ -49,7 +50,7 @@ class _HomepageState extends State<Homepage> {
                 width: double.infinity,
                 child: BottomAppBar(
                   elevation: 20.0,
-                  // color: Colors.black,
+                  color: Colors.blueGrey[800],
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -61,8 +62,8 @@ class _HomepageState extends State<Homepage> {
                           );
                         },
                         icon: Icon(
-                          Icons.home,
-                          // color: Colors.white,
+                          Icons.home_outlined,
+                          color: Colors.blueGrey[200],
                         ),
                       ),
                       IconButton(
@@ -74,17 +75,23 @@ class _HomepageState extends State<Homepage> {
                           );
                         },
                         icon: Icon(
-                          CupertinoIcons.heart_fill,
-                          // color: Colors.white,
+                          Icons.favorite_border_sharp,
+                          //CupertinoIcons.heart_fill,
+                          color: Colors.blueGrey[200],
                         ),
                       ),
                       IconButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => CryptoNewsList()),);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CryptoNewsList()),
+                          );
                         },
                         icon: Icon(
-                          CupertinoIcons.news_solid,
-                          // color: Colors.white,
+                          Icons.wysiwyg_rounded,
+                          //CupertinoIcons.news_solid,
+                          color: Colors.blueGrey[200],
                         ),
                       ),
                       IconButton(
@@ -95,8 +102,9 @@ class _HomepageState extends State<Homepage> {
                           );
                         },
                         icon: Icon(
-                          CupertinoIcons.settings_solid,
-                          // color: Colors.white,
+                          Icons.settings_outlined,
+                          //CupertinoIcons.settings_solid,
+                          color: Colors.blueGrey[200],
                         ),
                       ),
                     ],
