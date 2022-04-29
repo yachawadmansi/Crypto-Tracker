@@ -4,7 +4,7 @@ import 'package:cryptotracker/Widgets/Cryptolisttile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'detailspage.dart';
+
 
 class Markets extends StatefulWidget {
   const Markets({Key? key}) : super(key: key);

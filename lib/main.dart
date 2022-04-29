@@ -4,7 +4,6 @@ import 'package:cryptotracker/Providers/Theme_provider.dart';
 import 'package:cryptotracker/Providers/marketprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'Models/localStorage.dart';
 import 'Providers/Chart_provider.dart';
 
